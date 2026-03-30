@@ -8,34 +8,13 @@ export function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    // Apply cursor none globally for non-touch devices
-    if (window.matchMedia('(pointer: fine)').matches) {
-      document.body.style.cursor = 'none';
-      
-      // We must add style to anchors and buttons so they don't override the body's cursor: none
-      const style = document.createElement('style');
-      style.textContent = `
-        a, button, [role="button"], input, select, textarea {
-          cursor: none !important;
-        }
-      `;
-      document.head.appendChild(style);
-
-      return () => {
-        document.body.style.cursor = 'auto';
-        document.head.removeChild(style);
-      };
-    }
-  }, []);
-
-  useEffect(() => {
+    // Keep the default cursor, this just acts as a subtle trailing highlight
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      // Check if target or parent is clickable/interactive
       const isClickable = 
         target.tagName.toLowerCase() === 'a' ||
         target.tagName.toLowerCase() === 'button' ||
@@ -59,51 +38,21 @@ export function CustomCursor() {
     };
   }, []);
 
-  const variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-      scale: 1,
-      opacity: 1,
-    },
-    hover: {
-      x: mousePosition.x - 32,
-      y: mousePosition.y - 32,
-      scale: 1.5,
-      backgroundColor: 'rgba(34, 211, 238, 0.1)', // cyan-400 tint
-      backdropFilter: 'blur(2px)',
-      opacity: 1,
-    }
-  };
-
-  // Only show on devices with a fine pointer (mouse)
+  // Very simple and classic minimal dot
   if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) {
     return null;
   }
 
   return (
-    <>
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-cyan-400 pointer-events-none z-[9999] hidden md:block"
-        variants={variants}
-        animate={isHovering ? 'hover' : 'default'}
-        transition={{
-          type: 'spring',
-          stiffness: 150,
-          damping: 15,
-          mass: 0.5
-        }}
-      />
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-violet-400 pointer-events-none z-[9999] hidden md:block"
-        animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
-          scale: isHovering ? 0 : 1,
-          opacity: isHovering ? 0 : 1
-        }}
-        transition={{ type: 'tween', ease: 'backOut', duration: 0.1 }}
-      />
-    </>
+    <motion.div
+      className="fixed top-0 left-0 w-4 h-4 rounded-full bg-cyan-400 pointer-events-none z-[9999] hidden md:block mix-blend-difference"
+      animate={{
+        x: mousePosition.x - 8,
+        y: mousePosition.y - 8,
+        scale: isHovering ? 2.5 : 1,
+        opacity: isHovering ? 0.5 : 0.8
+      }}
+      transition={{ type: 'tween', ease: 'easeOut', duration: 0.15 }}
+    />
   );
 }

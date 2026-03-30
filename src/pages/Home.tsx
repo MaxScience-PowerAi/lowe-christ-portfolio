@@ -8,7 +8,6 @@ import { ProjectCard } from '@/components/portfolio/ProjectCard';
 import { ScrollIndicator } from '@/components/ui/ScrollIndicator';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ArrowRight, MapPin, Sparkles, Brain, Code2, Database, Rocket } from 'lucide-react';
-import { HeroParticles } from '@/components/3d/HeroParticles';
 import Link from 'next/link';
 
 /**
@@ -57,8 +56,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/20 via-transparent to-violet-900/15" />
           </div>
 
-          {/* Animated Neural Network Particles */}
-          <HeroParticles />
+          {/* Video is acting as the hero background */}
 
           {/* Hero Content */}
           <div className="relative h-full flex flex-col items-center justify-center px-6">
