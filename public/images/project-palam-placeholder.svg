@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder projet PALAM (langues locales Cameroun)">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b0b0f"/>
+      <stop offset="0.6" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#451a03"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="0.5" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <g opacity="0.12" fill="#ffffff">
+    <path d="M220 580h1160v40H220z"/>
+    <path d="M220 660h860v40H220z"/>
+    <path d="M220 740h1020v40H220z"/>
+  </g>
+
+  <rect x="140" y="780" width="520" height="10" rx="5" fill="url(#accent)" opacity="0.95"/>
+
+  <g fill="#ffffff" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <text x="140" y="220" font-size="56" font-weight="300" fill-opacity="0.95">PALAM</text>
+    <text x="140" y="280" font-size="24" font-weight="300" fill-opacity="0.78">LLM  langues locales du Cameroun</text>
+    <text x="140" y="330" font-size="18" font-weight="300" fill-opacity="0.55">Placeholder visuel (remplace par interface/démos)</text>
+  </g>
+</svg>

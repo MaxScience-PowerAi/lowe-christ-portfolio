@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder mini projets data (dashboards, Kaggle, agents IA)">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b0b0f"/>
+      <stop offset="0.55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="0.5" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+
+  <g opacity="0.18" fill="#ffffff">
+    <rect x="260" y="420" width="1080" height="320" rx="18"/>
+    <rect x="300" y="470" width="420" height="30" rx="10"/>
+    <rect x="300" y="520" width="820" height="18" rx="9"/>
+    <rect x="300" y="560" width="740" height="18" rx="9"/>
+    <rect x="300" y="600" width="680" height="18" rx="9"/>
+    <rect x="300" y="640" width="520" height="18" rx="9"/>
+    <rect x="1160" y="470" width="140" height="200" rx="14"/>
+  </g>
+
+  <rect x="140" y="780" width="520" height="10" rx="5" fill="url(#accent)" opacity="0.95"/>
+
+  <g fill="#ffffff" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <text x="140" y="220" font-size="56" font-weight="300" fill-opacity="0.95">Mini Projets Data</text>
+    <text x="140" y="280" font-size="24" font-weight="300" fill-opacity="0.78">Dashboards " Kaggle " agents IA</text>
+    <text x="140" y="330" font-size="18" font-weight="300" fill-opacity="0.55">Placeholder visuel (remplace par notebooks/dashboards)</text>
+  </g>
+</svg>
